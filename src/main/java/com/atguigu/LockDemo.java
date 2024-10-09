@@ -23,7 +23,7 @@ class Phone{
 public class LockDemo {
     public static void main(String[] args) {
         Phone phone = new Phone();
-        /*Phone phone2 = new Phone();*/
+        Phone phone2 = new Phone();
 
         new Thread(() -> {phone.sendEmail();},"t1").start();
 
@@ -31,7 +31,7 @@ public class LockDemo {
             TimeUnit.MILLISECONDS.sleep(10);
         } catch (InterruptedException e) {e.printStackTrace();}
 
-        new Thread(() -> {phone.sendSMS();},"t2").start();
+        new Thread(() -> {phone2.sendSMS();},"t2").start();
 
 
     }
